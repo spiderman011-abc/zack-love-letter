@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#fff0f5">
   <title>for my baby tanda, zack ♡</title>
 
   <style>
@@ -12,233 +11,212 @@
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
-      font-family: "Trebuchet MS", Arial, sans-serif;
-      color: #704258;
-      background: linear-gradient(145deg, #fff0f5, #ffe0eb, #fff8f5);
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      color: #75485a;
+      background:
+        radial-gradient(circle at top left, #fff8fa, transparent 40%),
+        linear-gradient(135deg, #ffe9ef, #fff4f6, #f9e4ed);
       overflow-x: hidden;
     }
 
-    .container {
-      width: min(760px, 100%);
-      margin: auto;
-      padding: 24px 20px;
+    .page {
+      width: min(92%, 760px);
+      margin: 0 auto;
+      padding: 35px 0 55px;
     }
 
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+    .top-note {
       text-align: center;
-      padding: 35px 10px;
-    }
-
-    .tag {
-      font-size: 12px;
-      letter-spacing: 3px;
-      color: #b9587d;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: #b17b91;
       text-transform: uppercase;
     }
 
     h1 {
-      font-family: Georgia, serif;
-      font-size: clamp(43px, 10vw, 76px);
-      line-height: 1.05;
-      margin: 22px 0;
-      color: #b64f78;
-    }
-
-    h1 span {
-      font-style: italic;
+      text-align: center;
+      font-size: clamp(30px, 7vw, 48px);
+      font-weight: normal;
+      line-height: 1.2;
+      margin: 15px 0;
+      color: #a65e7c;
     }
 
     .subtitle {
-      line-height: 1.8;
-      max-width: 440px;
-      color: #936c7e;
-    }
-
-    .decor {
-      font-size: 28px;
-      margin: 22px;
-      letter-spacing: 12px;
-      color: #d8759a;
-    }
-
-    button {
-      font: inherit;
-      cursor: pointer;
-      border: none;
-      border-radius: 30px;
-      padding: 15px 24px;
-      background: #bf5b83;
-      color: white;
-      font-weight: bold;
-      box-shadow: 0 8px 20px #bd5d8330;
-      transition: 0.2s;
-    }
-
-    button:hover {
-      transform: translateY(-3px);
-    }
-
-    .hint {
-      font-size: 12px;
-      color: #a27a8b;
-      margin-top: 17px;
-    }
-
-    .hidden {
-      display: none !important;
-    }
-
-    .letter {
-      position: relative;
-      background: #fffdf9;
-      padding: clamp(24px, 6vw, 48px);
-      border: 1px solid #f3d5e0;
-      border-radius: 8px 8px 18px 8px;
-      box-shadow: 0 15px 40px #a64c7015;
-      margin: 15px 0 60px;
-      animation: appear 0.7s ease;
-    }
-
-    .tape {
-      position: absolute;
-      top: -11px;
-      left: 40%;
-      width: 90px;
-      height: 23px;
-      background: #f5bfd2cc;
-      transform: rotate(-4deg);
-    }
-
-    .small-title {
-      color: #bd6386;
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    h2 {
-      font-family: Georgia, serif;
-      color: #b64f78;
-      font-size: 32px;
-    }
-
-    .letter p {
+      text-align: center;
+      font-style: italic;
       font-size: 15px;
-      line-height: 1.95;
+      margin-bottom: 28px;
+      color: #a77a8b;
+    }
+
+    .paper {
+      background: rgba(255, 252, 250, 0.92);
+      border: 1px solid #f0d3df;
+      border-radius: 5px;
+      padding: clamp(22px, 5vw, 42px);
+      box-shadow: 0 12px 35px rgba(143, 81, 105, 0.10);
+      position: relative;
+    }
+
+    .stamp {
+      text-align: center;
+      font-size: 28px;
       margin-bottom: 20px;
     }
 
-    .signature {
-      font-family: Georgia, serif;
-      font-size: 21px;
-      line-height: 1.7;
-      margin-top: 30px;
+    .letter {
+      display: none;
+      font-size: 16px;
+      line-height: 1.95;
+      white-space: pre-line;
+      animation: appear 1s ease;
     }
 
-    .signature strong {
-      font-size: 30px;
-      font-style: italic;
-      color: #b64f78;
+    .letter.show {
+      display: block;
     }
 
-    .memories {
-      text-align: center;
-      padding: 30px 0 65px;
+    .letter p {
+      margin: 0 0 18px;
     }
 
-    .memories > p {
-      color: #936c7e;
-      line-height: 1.8;
+    .open-button, .music-button {
+      display: block;
+      margin: 25px auto;
+      padding: 13px 23px;
+      border: 1px solid #d9a2b7;
+      border-radius: 30px;
+      background: #f8dce7;
+      color: #814b62;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .open-button:hover, .music-button:hover {
+      background: #f2c7d8;
+      transform: translateY(-2px);
     }
 
     .photos {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-      align-items: start;
+      gap: 18px;
+      margin: 32px 0;
     }
 
     .photo-card {
       background: white;
-      padding: 10px 10px 16px;
-      box-shadow: 0 10px 30px #a64c7020;
-    }
-
-    .photo-card:nth-child(1) {
+      padding: 10px 10px 15px;
+      box-shadow: 0 7px 18px rgba(143, 81, 105, 0.12);
       transform: rotate(-2deg);
     }
 
     .photo-card:nth-child(2) {
       transform: rotate(2deg);
-      margin-top: 20px;
     }
 
     .photo-card img {
       display: block;
       width: 100%;
-      height: 290px;
+      aspect-ratio: 4 / 5;
       object-fit: cover;
-      background: #ffe1ec;
+      background: #f8e7ed;
     }
 
-    .caption {
-      font-family: Georgia, serif;
-      font-style: italic;
-      font-size: 13px;
-      margin-top: 13px;
-      color: #b64f78;
-    }
-
-    .ending {
+    .photo-caption {
       text-align: center;
-      background: #fff9fbcc;
-      border: 1px dashed #e7a6bf;
-      border-radius: 22px;
-      padding: 35px 24px;
-      margin-bottom: 45px;
-    }
-
-    .ending p {
-      line-height: 1.9;
-      color: #936c7e;
-    }
-
-    .ending .signoff {
-      font-family: Georgia, serif;
-      font-size: 25px;
-      color: #b64f78;
+      padding-top: 12px;
+      font-size: 13px;
       font-style: italic;
+    }
+
+    .music-card {
+      text-align: center;
+      margin: 30px 0;
+      padding: 22px;
+      border: 1px dashed #d9a2b7;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.55);
+    }
+
+    .music-card h2 {
+      font-weight: normal;
+      font-size: 22px;
+      margin: 8px 0;
+    }
+
+    .music-card p {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      line-height: 1.7;
+      color: #9a7181;
+    }
+
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      margin: 18px auto 0;
+      aspect-ratio: 16 / 9;
+      background: #f5dce6;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .video-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      position: absolute;
+      inset: 0;
+    }
+
+    .closing {
+      text-align: center;
+      margin-top: 40px;
+      line-height: 1.9;
+      font-size: 15px;
+    }
+
+    .signature {
+      font-size: 24px;
+      font-style: italic;
+      color: #a65e7c;
+      margin-top: 15px;
     }
 
     footer {
       text-align: center;
-      padding: 20px 5px;
-      font-size: 12px;
-      color: #a27a8b;
+      margin-top: 35px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: #b68a9b;
     }
 
     .heart {
       position: fixed;
       bottom: -30px;
-      z-index: 10;
+      z-index: -1;
+      color: #e7a9c0;
+      opacity: 0.65;
       pointer-events: none;
-      color: #d96f98;
-      animation: floatUp 4s linear forwards;
+      animation: floatUp 9s linear infinite;
     }
 
     @keyframes floatUp {
+      from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      15% { opacity: 0.6; }
       to {
         transform: translateY(-110vh) rotate(25deg);
         opacity: 0;
@@ -246,355 +224,176 @@
     }
 
     @keyframes appear {
-      from {
-        opacity: 0;
-        transform: translateY(15px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 520px) {
+    @media (max-width: 480px) {
       .photos {
-        grid-template-columns: 1fr;
-        max-width: 340px;
-        margin: 25px auto 0;
+        gap: 12px;
       }
 
-      .photo-card:nth-child(1),
-      .photo-card:nth-child(2) {
-        transform: none;
-        margin-top: 0;
-      }
-
-      .photo-card img {
-        height: auto;
-        max-height: 450px;
-        object-fit: contain;
-      }
-
-      .letter p {
-        font-size: 14px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
+      .letter {
+        font-size: 15px;
       }
     }
   </style>
 </head>
 
 <body>
-  <main class="container">
+  <main class="page">
+    <div class="top-note">a little something, just for you ♡</div>
 
-    <section class="hero">
-      <div class="tag">a tiny corner of the internet ♡</div>
+    <h1>for my baby tanda, zack ♡</h1>
 
-      <h1>for my baby tanda,<br><span>zack ♡</span></h1>
+    <div class="subtitle">
+      a little letter from someone who appreciates you
+    </div>
 
-      <p class="subtitle">
-        a little letter from your gigi, made with love
-        and a little bit of kalokohan. hehe.
-      </p>
+    <section class="paper">
+      <div class="stamp">💌</div>
 
-      <div class="decor">♡ ୨୧ ♡</div>
+      <div id="letter" class="letter">
+        <p>hi, zack. ♡</p>
 
-      <button id="openButton">open your letter 💌</button>
+        <p>
+          i don't really know what made me write this, maybe i just
+          missed you a little more than usual, or maybe there are
+          things i want you to know that i don't always get to say.
+        </p>
 
-      <p class="hint">psst... this little corner is made just for you.</p>
+        <p>
+          i'm genuinely thankful that God gave me the chance to know
+          you. i'm glad our paths crossed, and i'm grateful for the
+          little conversations, the random moments, and the happiness
+          you bring into my days without even realizing it.
+        </p>
+
+        <p>
+          i hope you know that you matter, not just because of the
+          things you do for me, but because of the person you are.
+          i appreciate your presence, your kindness, and the little
+          things that somehow manage to make ordinary days feel special.
+        </p>
+
+        <p>
+          i may not always know how to express what i feel, and
+          sometimes i hide behind jokes or act like everything is
+          just playful teasing. but that doesn't mean my appreciation
+          for you isn't genuine. there's a reason you make me smile
+          at my screen and remember our conversations afterward.
+        </p>
+
+        <p>
+          i don't want this letter to put pressure on you or make you
+          feel like you have to give me a particular answer. i just
+          wanted to make something thoughtful for you, something you
+          can come back to whenever you need a little reminder that
+          someone is happy to have you in their life.
+        </p>
+
+        <p>
+          so please take care of yourself, tanda. eat well, get enough
+          rest, and don't forget to give yourself the same kindness
+          you give to other people. i hope life gives you plenty of
+          reasons to smile, and i hope you never doubt that you are
+          appreciated.
+        </p>
+
+        <p>
+          thank you for being you, zack. i'm really glad i got to
+          know you. whatever happens, i'm happy that you're a part
+          of my story. ♡
+        </p>
+
+        <p class="signature">yours, gigi ♡</p>
+      </div>
+
+      <button id="openButton" class="open-button" onclick="openLetter()">
+        open your letter 💌
+      </button>
     </section>
 
-    <section id="letterSection" class="letter hidden">
-      <div class="tape"></div>
-      <div class="small-title">a little note for you ♡</div>
+    <section class="photos">
+      <div class="photo-card">
+        <img src="images/gigi-photo-1.jpg" alt="a little memory">
+        <div class="photo-caption">a little piece of me ♡</div>
+      </div>
 
-      <h2>dear zack, ♡</h2>
-
-      <p>
-        honestly, i don't really know how to start this letter because
-        there are so many things i want to say, and i'm not even sure
-        if i'll be able to put all of them into words. but i guess i'll
-        start with the simplest thing i can say: i'm really glad i got
-        to know you.
-      </p>
-
-      <p>
-        it's funny how some people come into our lives unexpectedly,
-        and before we even realize it, they've become someone we look
-        forward to talking to. i never really know how to explain it,
-        but talking to you has become one of those little things that
-        can make an ordinary day feel a little better. sometimes, it's
-        the most random conversations that end up making me smile the
-        most, and i think that's one of the things i appreciate about
-        getting to know you.
-      </p>
-
-      <p>
-        i like how we can joke around, tease each other, and be
-        unserious about the most random things. there's something
-        comforting about being able to laugh with someone without
-        having to think too much about what to say next. i appreciate
-        the little moments we share, even the ones that might seem
-        ordinary to you. sometimes, the smallest things leave the
-        nicest impressions, and i think that's something i've come
-        to realize because of you.
-      </p>
-
-      <p>
-        i also want you to know that i appreciate you as a person,
-        not just because of how you make me feel. i hope you know
-        that you have your own qualities worth appreciating, even on
-        days when you might not recognize them yourself. you deserve
-        people who genuinely listen to you, understand you, respect
-        you, and appreciate you for who you are. and i hope you always
-        find yourself surrounded by people who make you feel that way.
-      </p>
-
-      <p>
-        i won't pretend that i always know what i'm doing or that i
-        have everything figured out when it comes to feelings.
-        sometimes, i can be playful when i'm actually being sincere,
-        and sometimes, i find it easier to joke around than to say
-        what i genuinely mean. so if there are moments when you can't
-        quite figure me out, i hope you know that it doesn't mean i'm
-        not being genuine. i'm still learning how to express myself, too.
-      </p>
-
-      <p>
-        but one thing i do know is that i'm happy i got the chance
-        to know you. i appreciate the conversations, the laughter,
-        the little efforts, and all the moments that have given me
-        reasons to smile. i don't think every meaningful connection
-        needs to be explained or defined right away. sometimes, it's
-        enough to appreciate what you have, let things happen naturally,
-        and get to know someone without rushing to figure out what
-        everything means.
-      </p>
-
-      <p>
-        i'm writing this because i wanted to tell you something i
-        might not always say properly in our conversations. i appreciate
-        you, zack. i appreciate the person you are and the little part
-        you've come to play in my days. and even if this letter doesn't
-        perfectly explain everything i'm feeling, i hope you can at
-        least understand that the words in it are sincere.
-      </p>
-
-      <p>
-        i don't expect you to have a particular response to this letter,
-        and i don't want you to feel like you have to say anything just
-        because i've written all of this. i simply wanted to be honest
-        with you for once, without hiding every sincere thought behind
-        a joke or changing the subject because i'm shy about expressing
-        myself.
-      </p>
-
-      <p>
-        whatever happens from here, i'm glad our paths crossed. i'm
-        glad we got to talk, laugh, and create little moments that i
-        can look back on fondly. i think getting to know someone is
-        a lovely thing in itself, and i'm grateful that i got to
-        experience that with you.
-      </p>
-
-      <p>
-        so, please take care of yourself, okay? don't forget to give
-        yourself time to rest, to enjoy the things you love, and to
-        appreciate yourself even when things aren't going the way you
-        planned. i hope you continue growing into the person you want
-        to become, and i hope you find plenty of reasons to be happy
-        along the way.
-      </p>
-
-      <p>
-        and lastly, thank you for being someone i've come to appreciate.
-        i may not always know how to say things perfectly, and i might
-        still tease you more than i give you sincere compliments,
-        HAHAHAHA, but i hope this letter makes one thing clear:
-        i genuinely mean the nice things i say about you.
-      </p>
-
-      <p>
-        i'm glad i met you, zack. that's all, and that's already
-        something meaningful to me. ♡
-      </p>
-
-      <div class="signature">
-        sincerely,<br>
-        <strong>gigi ♡</strong>
+      <div class="photo-card">
+        <img src="images/gigi-photo-2.jpg" alt="a photo to remember">
+        <div class="photo-caption">miss you always ♡</div>
       </div>
     </section>
 
-    <section class="memories">
-      <div class="small-title">little pieces of me</div>
-      <h2>some cute pics for you ♡</h2>
-
+    <section class="music-card">
+      <div style="font-size: 27px;">🎧 ☀️</div>
+      <h2>our little soundtrack</h2>
       <p>
-        because a letter from me wouldn't be complete
-        without a little photo dump. hehe.
+        Daylight — Taylor Swift<br>
+        press play and read your letter ♡
       </p>
 
-      <div class="photos">
-        <figure class="photo-card">
-          <img src="images/gigi-photo-1.jpg"
-               alt="Gigi smiling in a mall">
-          <figcaption class="caption">
-            one little smile, sent your way ♡
-          </figcaption>
-        </figure>
-
-        <figure class="photo-card">
-          <img src="images/gigi-photo-2.jpg"
-               alt="Gigi's cute miss-you photo">
-          <figcaption class="caption">
-            miss you always 💗
-          </figcaption>
-        </figure>
+      <div class="video-wrap">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/qsUK-BG5OQQ?rel=0"
+          title="Daylight by Taylor Swift"
+          loading="lazy"
+          allow="encrypted-media; picture-in-picture"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
       </div>
-    </section>
-
-    <section class="ending">
-      <div class="decor">♡</div>
-      <div class="small-title">before you go...</div>
-      <h2>take care, tanda.</h2>
 
       <p>
-        eat well, get enough rest, and don't forget that you're
-        appreciated. thank you for being part of my days.
-        no pressure, no perfect words — just something sincere
-        from me to you.
-      </p>
-
-      <div class="signoff">yours, gigi ♡</div>
-
-      <br>
-
-      <button id="musicButton">♫ play a tiny tune</button>
-      <p id="musicStatus" class="hint">
-        a tiny melody made just for this little website ♡
+        if the song doesn't load here, open it on
+        <a href="https://www.youtube.com/results?search_query=Taylor+Swift+Daylight+official+audio"
+           target="_blank" rel="noopener noreferrer">
+          YouTube
+        </a>.
       </p>
     </section>
 
-    <footer>
-      made with ♡, a little shyness, and lots of gigi energy.
-    </footer>
+    <div class="closing">
+      no matter how busy life gets, i hope you keep finding little
+      reasons to be happy. and if this letter gives you even one
+      extra reason to smile, then i'm glad i made it.
+      <div class="signature">take care, tanda. ♡</div>
+    </div>
+
+    <footer>made with care, just for you · gigi ♡</footer>
   </main>
 
   <script>
-    const openButton = document.getElementById("openButton");
-    const letterSection = document.getElementById("letterSection");
+    function openLetter() {
+      const letter = document.getElementById("letter");
+      const button = document.getElementById("openButton");
 
-    function makeHearts() {
-      const symbols = ["♡", "♥", "✦"];
+      letter.classList.add("show");
+      button.textContent = "your letter is open ♡";
+      button.disabled = true;
+      button.style.opacity = "0.75";
 
-      for (let i = 0; i < 18; i++) {
-        const heart = document.createElement("span");
-        heart.className = "heart";
-        heart.textContent =
-          symbols[Math.floor(Math.random() * symbols.length)];
-
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDelay = Math.random() * 1.5 + "s";
-        heart.style.fontSize = 16 + Math.random() * 18 + "px";
-
-        document.body.appendChild(heart);
-
-        heart.addEventListener("animationend", () => heart.remove());
-      }
-    }
-
-    openButton.addEventListener("click", () => {
-      letterSection.classList.remove("hidden");
-      openButton.textContent = "your letter is open ♡";
-      openButton.disabled = true;
-      makeHearts();
-
-      letterSection.scrollIntoView({
+      letter.scrollIntoView({
         behavior: "smooth",
         block: "start"
       });
-    });
-
-    let audioContext;
-    let musicTimer;
-    let playing = false;
-    let noteIndex = 0;
-
-    const musicButton = document.getElementById("musicButton");
-    const musicStatus = document.getElementById("musicStatus");
-
-    const melody = [
-      523.25, 659.25, 783.99, 659.25,
-      587.33, 698.46, 880, 698.46
-    ];
-
-    function playNote(frequency) {
-      const oscillator = audioContext.createOscillator();
-      const volume = audioContext.createGain();
-
-      oscillator.type = "sine";
-      oscillator.frequency.value = frequency;
-
-      volume.gain.setValueAtTime(0.001, audioContext.currentTime);
-      volume.gain.exponentialRampToValueAtTime(
-        0.045, audioContext.currentTime + 0.04
-      );
-      volume.gain.exponentialRampToValueAtTime(
-        0.001, audioContext.currentTime + 0.4
-      );
-
-      oscillator.connect(volume);
-      volume.connect(audioContext.destination);
-
-      oscillator.start();
-      oscillator.stop(audioContext.currentTime + 0.42);
     }
 
-    function stopMusic() {
-      clearInterval(musicTimer);
-      musicTimer = null;
-      playing = false;
-      musicButton.textContent = "♫ play a tiny tune";
-      musicStatus.textContent =
-        "a tiny melody made just for this little website ♡";
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.textContent = Math.random() > 0.5 ? "♡" : "♥";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (12 + Math.random() * 20) + "px";
+      heart.style.animationDuration = (7 + Math.random() * 5) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 12000);
     }
 
-    musicButton.addEventListener("click", async () => {
-      if (playing) {
-        stopMusic();
-        return;
-      }
-
-      const AudioContextClass =
-        window.AudioContext || window.webkitAudioContext;
-
-      if (!AudioContextClass) {
-        musicStatus.textContent =
-          "Your browser cannot play this tune, but the letter still works ♡";
-        return;
-      }
-
-      audioContext = audioContext || new AudioContextClass();
-
-      if (audioContext.state === "suspended") {
-        await audioContext.resume();
-      }
-
-      playing = true;
-      musicButton.textContent = "Ⅱ pause the tiny tune";
-      musicStatus.textContent = "a little tune, just for you ♡";
-
-      playNote(melody[noteIndex++ % melody.length]);
-
-      musicTimer = setInterval(() => {
-        playNote(melody[noteIndex++ % melody.length]);
-      }, 520);
-    });
+    setInterval(createHeart, 900);
   </script>
 </body>
 </html>
